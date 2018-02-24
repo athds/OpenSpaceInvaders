@@ -5,15 +5,15 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
 
-    public float speed = 10f;
-    public GameObject leftBullet;
-    public Vector3 TargetPos;
-    bool hitedge;
+    public float speed = 10f;//this one
+    public GameObject leftBullet;//this one
+    public Vector3 TargetPos;//this  one
+    bool hitedge; //this
 	// Use this for initialization
 	void Start () {
-        TargetPos = leftBullet.transform.position;
+        TargetPos = leftBullet.transform.position;//this
 
-        hitedge = false;
+        hitedge = false;//this
 
 	}
 	
@@ -22,11 +22,11 @@ public class playerMovement : MonoBehaviour {
         CheckInput();
 
 
-        Checkbounds();
+        Checkbounds();//this
 
 
-        float MoveStep = speed * Time.deltaTime;
-        leftBullet.transform.position = Vector3.MoveTowards(leftBullet.transform.position, TargetPos, MoveStep);
+        float MoveStep = speed * Time.deltaTime; //this one
+        leftBullet.transform.position = Vector3.MoveTowards(leftBullet.transform.position, TargetPos, MoveStep); //this one
 	}
 
 
@@ -35,7 +35,7 @@ public class playerMovement : MonoBehaviour {
          
         if (Input.GetKey("space")){
             leftBullet.SetActive(true);
-            TargetPos = transform.position + new Vector3(0f, 9f, 0f);
+            TargetPos = transform.position + new Vector3(0f, 9f, 0f); //this one
             hitedge = false;
         }
         else
@@ -52,7 +52,7 @@ public class playerMovement : MonoBehaviour {
 
     }
 
-    void Checkbounds()
+    void Checkbounds() //this function
     {
         if(leftBullet.transform.position.y == 5.27f)
         {
